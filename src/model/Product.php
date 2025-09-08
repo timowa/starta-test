@@ -92,21 +92,39 @@ class Product extends Model
     {
         $db = DB::getInstance();
         $this->validate();
-        try {
-            $this->id = $db->insert('products', [
-                'name' => $this->name,
-                'category_id' => $this->categoryId,
-                'price' => $this->price,
-                'rating' => $this->rating,
-                'stock' => $this->stock,
-            ]);
-        } catch (\PDOException $e) {
-            throw new \Exception('Ошибка создания категории');
+        if (!$this->exists()) {
+            try {
+                $this->id = $db->insert('products', [
+                    'id' => $this->id,
+                    'name' => $this->name,
+                    'category_id' => $this->categoryId,
+                    'price' => $this->price,
+                    'rating' => $this->rating,
+                    'stock' => $this->stock,
+                ]);
+            } catch (\PDOException $e) {
+                throw new \Exception('Ошибка создания категории');
+            }
+        } else{
+            try {
+                $db->update('products', [
+                    'name' => $this->name,
+                    'category_id' => $this->categoryId,
+                    'price' => $this->price,
+                    'rating' => $this->rating,
+                    'stock' => $this->stock,
+                    'updated_at' => 'NOW()'
+                ], "id = {$this->id}");
+            } catch (\PDOException $e) {
+                throw new \Exception('Ошибка обновления товара');
+            }
         }
+
     }
 
     private function needsUpdate() {
         $needsUpdate = false;
+
         if ($this->name !== $this->newName) {
             $needsUpdate = true;
         }
@@ -116,6 +134,7 @@ class Product extends Model
         if ($this->price !== $this->newPrice) {
             $needsUpdate = true;
         }
+
         if ($this->rating !== $this->newRating) {
             $needsUpdate = true;
         }
@@ -129,7 +148,7 @@ class Product extends Model
     {
         $this->newName = trim($productData['name']);
         $this->newCategoryId = intval($productData['category_id']);
-        $this->newPrice = intval($productData['price']);
+        $this->newPrice = floatval($productData['price']);
         $this->newRating = floatval($productData['rating']);
         $this->newStock = intval($productData['stock']);
         if ($this->needsUpdate()) {
@@ -138,17 +157,14 @@ class Product extends Model
                 throw new \Exception('Нет такой категории');
             }
             $db = DB::getInstance();
-            try {
-                $db->update('products', [
-                    'name' => $this->newName,
-                    'category_id' => $this->newCategoryId,
-                    'price' => $this->newPrice,
-                    'rating' => $this->newRating,
-                    'stock' => $this->newStock
-                ]);
-            } catch (\PDOException $e) {
-                throw new \Exception('Ошибка обновления товара');
-            }
+            $this->name = $this->newName;
+            $this->categoryId = $this->newCategoryId;
+            $this->price = $this->newPrice;
+            $this->rating = $this->newRating;
+            $this->stock = $this->newStock;
+            $this->save();
+            return true;
         }
+        return false;
     }
 }

@@ -44,9 +44,9 @@ if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
             }
 
             // Читаем строки из CSV-файла
-
-            while (($data = fgetcsv($handle)) !== false) {
-                $products[] = $data;
+            $keys = fgetcsv($handle);
+            while (($values = fgetcsv($handle)) !== false) {
+                $products[] = array_combine($keys, $values);
             }
             fclose($handle); // Закрываем ресурс
             break;
@@ -81,11 +81,12 @@ if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
     }
     foreach ($products as $product) {
         $product['category_id'] = current(array_filter($allCategories, fn ($c) => $c->getName() === $product['category']))->getId();
-        $productObj = current(array_filter($allProducts, fn ($p) => $p->getId() === $product['id']));
+        $productObj = current(array_filter($allProducts, fn ($p) => $p->getId() === intval($product['id'])));
         if ($productObj) {
             try {
-                $productObj->update($product);
-                $productUpdateSuccess++;
+                if ($productObj->update($product)) {
+                    $productUpdateSuccess++;
+                }
             } catch (\Exception $e) {
                 $productUpdateError++;
             }
