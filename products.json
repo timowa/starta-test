@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "category": "Electronics",
+    "price": 1200.00,
+    "stock": 50,
+    "rating": 4.5,
+    "created_at": "2025-09-01T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Coffee Maker",
+    "category": "Home Appliances",
+    "price": 75.50,
+    "stock": 150,
+    "rating": 4.2,
+    "created_at": "2025-08-25T14:30:00Z"
+  },
+  {
+    "id": 3,
+    "name": "T-Shirt",
+    "category": "Apparel",
+    "price": 25.00,
+    "stock": 500,
+    "rating": 4.8,
+    "created_at": "2025-09-05T08:15:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Smartphone",
+    "category": "Electronics",
+    "price": 850.75,
+    "stock": 120,
+    "rating": 4.7,
+    "created_at": "2025-09-02T16:45:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Book",
+    "category": "Books",
+    "price": 15.99,
+    "stock": 300,
+    "rating": 4.9,
+    "created_at": "2025-07-20T11:00:00Z"
+  },
+  {
+    "id": 6,
+    "name": "Desk Lamp",
+    "category": "Home Office",
+    "price": 45.00,
+    "stock": 200,
+    "rating": 4.1,
+    "created_at": "2025-08-15T09:00:00Z"
+  },
+  {
+    "id": 7,
+    "name": "Running Shoes",
+    "category": "Apparel",
+    "price": 90.50,
+    "stock": 180,
+    "rating": 4.6,
+    "created_at": "2025-09-03T12:00:00Z"
+  },
+  {
+    "id": 8,
+    "name": "Bluetooth Speaker",
+    "category": "Electronics",
+    "price": 60.00,
+    "stock": 250,
+    "rating": 4.3,
+    "created_at": "2025-09-04T17:00:00Z"
+  },
+  {
+    "id": 9,
+    "name": "Water Bottle",
+    "category": "Kitchenware",
+    "price": 10.00,
+    "stock": 750,
+    "rating": 4.9,
+    "created_at": "2025-08-10T10:00:00Z"
+  },
+  {
+    "id": 10,
+    "name": "Keyboard",
+    "category": "Electronics",
+    "price": 75.00,
+    "stock": 100,
+    "rating": 4.4,
+    "created_at": "2025-09-01T15:00:00Z"
+  },
+  {
+    "id": 11,
+    "name": "Jeans",
+    "category": "Apparel",
+    "price": 55.00,
+    "stock": 350,
+    "rating": 4.5,
+    "created_at": "2025-09-06T11:00:00Z"
+  },
+  {
+    "id": 12,
+    "name": "Blender",
+    "category": "Home Appliances",
+    "price": 50.25,
+    "stock": 90,
+    "rating": 4.1,
+    "created_at": "2025-08-28T13:00:00Z"
+  },
+  {
+    "id": 13,
+    "name": "Webcam",
+    "category": "Electronics",
+    "price": 35.00,
+    "stock": 200,
+    "rating": 4.3,
+    "created_at": "2025-09-07T09:00:00Z"
+  },
+  {
+    "id": 14,
+    "name": "Hoodie",
+    "category": "Apparel",
+    "price": 40.00,
+    "stock": 400,
+    "rating": 4.7,
+    "created_at": "2025-08-30T10:00:00Z"
+  },
+  {
+    "id": 15,
+    "name": "Mouse",
+    "category": "Electronics",
+    "price": 20.00,
+    "stock": 600,
+    "rating": 4.6,
+    "created_at": "2025-09-01T14:00:00Z"
+  },
+  {
+    "id": 16,
+    "name": "Sofa",
+    "category": "Furniture",
+    "price": 550.00,
+    "stock": 20,
+    "rating": 4.0,
+    "created_at": "2025-07-15T12:00:00Z"
+  },
+  {
+    "id": 17,
+    "name": "TV",
+    "category": "Electronics",
+    "price": 900.00,
+    "stock": 40,
+    "rating": 4.8,
+    "created_at": "2025-09-03T15:00:00Z"
+  },
+  {
+    "id": 18,
+    "name": "Gaming Chair",
+    "category": "Furniture",
+    "price": 250.00,
+    "stock": 30,
+    "rating": 4.6,
+    "created_at": "2025-08-20T11:00:00Z"
+  },
+  {
+    "id": 19,
+    "name": "Headphones",
+    "category": "Electronics",
+    "price": 150.00,
+    "stock": 180,
+    "rating": 4.9,
+    "created_at": "2025-09-04T10:00:00Z"
+  },
+  {
+    "id": 20,
+    "name": "Backpack",
+    "category": "Bags",
+    "price": 65.00,
+    "stock": 120,
+    "rating": 4.7,
+    "created_at": "2025-08-25T16:00:00Z"
+  },
+  {
+    "id": 21,
+    "name": "Mug",
+    "category": "Kitchenware",
+    "price": 8.00,
+    "stock": 500,
+    "rating": 4.5,
+    "created_at": "2025-08-22T08:00:00Z"
+  },
+  {
+    "id": 22,
+    "name": "Pillow",
+    "category": "Home Decor",
+    "price": 22.50,
+    "stock": 300,
+    "rating": 4.3,
+    "created_at": "2025-08-18T10:00:00Z"
+  },
+  {
+    "id": 23,
+    "name": "Dumbbells",
+    "category": "Sports",
+    "price": 45.00,
+    "stock": 100,
+    "rating": 4.5,
+    "created_at": "2025-09-01T12:00:00Z"
+  },
+  {
+    "id": 24,
+    "name": "Yoga Mat",
+    "category": "Sports",
+    "price": 20.00,
+    "stock": 200,
+    "rating": 4.8,
+    "created_at": "2025-08-29T10:00:00Z"
+  },
+  {
+    "id": 25,
+    "name": "Coffee Table",
+    "category": "Furniture",
+    "price": 120.00,
+    "stock": 50,
+    "rating": 4.1,
+    "created_at": "2025-08-10T15:00:00Z"
+  },
+  {
+    "id": 26,
+    "name": "Cutting Board",
+    "category": "Kitchenware",
+    "price": 18.00,
+    "stock": 250,
+    "rating": 4.4,
+    "created_at": "2025-09-05T13:00:00Z"
+  },
+  {
+    "id": 27,
+    "name": "Hand Mixer",
+    "category": "Home Appliances",
+    "price": 30.00,
+    "stock": 150,
+    "rating": 4.2,
+    "created_at": "2025-08-27T11:00:00Z"
+  },
+  {
+    "id": 28,
+    "name": "Socks",
+    "category": "Apparel",
+    "price": 7.00,
+    "stock": 800,
+    "rating": 4.9,
+    "created_at": "2025-09-02T09:00:00Z"
+  },
+  {
+    "id": 29,
+    "name": "Tablet",
+    "category": "Electronics",
+    "price": 300.00,
+    "stock": 80,
+    "rating": 4.6,
+    "created_at": "2025-09-04T14:00:00Z"
+  },
+  {
+    "id": 30,
+    "name": "Printer",
+    "category": "Electronics",
+    "price": 150.00,
+    "stock": 60,
+    "rating": 4.0,
+    "created_at": "2025-08-25T11:00:00Z"
+  },
+  {
+    "id": 31,
+    "name": "Sweater",
+    "category": "Apparel",
+    "price": 50.00,
+    "stock": 250,
+    "rating": 4.5,
+    "created_at": "2025-08-20T15:00:00Z"
+  },
+  {
+    "id": 32,
+    "name": "Toaster",
+    "category": "Home Appliances",
+    "price": 25.00,
+    "stock": 200,
+    "rating": 4.3,
+    "created_at": "2025-08-15T10:00:00Z"
+  },
+  {
+    "id": 33,
+    "name": "Backpack",
+    "category": "Bags",
+    "price": 65.00,
+    "stock": 120,
+    "rating": 4.7,
+    "created_at": "2025-08-25T16:00:00Z"
+  },
+  {
+    "id": 34,
+    "name": "Charger",
+    "category": "Electronics",
+    "price": 15.00,
+    "stock": 400,
+    "rating": 4.5,
+    "created_at": "2025-09-01T11:00:00Z"
+  },
+  {
+    "id": 35,
+    "name": "Pen",
+    "category": "Stationery",
+    "price": 5.00,
+    "stock": 1000,
+    "rating": 4.8,
+    "created_at": "2025-07-01T10:00:00Z"
+  },
+  {
+    "id": 36,
+    "name": "Notebook",
+    "category": "Stationery",
+    "price": 12.00,
+    "stock": 700,
+    "rating": 4.6,
+    "created_at": "2025-08-05T12:00:00Z"
+  },
+  {
+    "id": 37,
+    "name": "Chair",
+    "category": "Furniture",
+    "price": 80.00,
+    "stock": 100,
+    "rating": 4.2,
+    "created_at": "2025-08-28T09:00:00Z"
+  },
+  {
+    "id": 38,
+    "name": "Air Fryer",
+    "category": "Home Appliances",
+    "price": 95.00,
+    "stock": 75,
+    "rating": 4.7,
+    "created_at": "2025-09-03T11:00:00Z"
+  },
+  {
+    "id": 39,
+    "name": "Watch",
+    "category": "Accessories",
+    "price": 150.00,
+    "stock": 100,
+    "rating": 4.5,
+    "created_at": "2025-09-05T14:00:00Z"
+  },
+  {
+    "id": 40,
+    "name": "Sunglasses",
+    "category": "Accessories",
+    "price": 25.00,
+    "stock": 200,
+    "rating": 4.3,
+    "created_at": "2025-08-20T10:00:00Z"
+  },
+  {
+    "id": 41,
+    "name": "Ring",
+    "category": "Jewelry",
+    "price": 100.00,
+    "stock": 50,
+    "rating": 4.8,
+    "created_at": "2025-08-15T12:00:00Z"
+  },
+  {
+    "id": 42,
+    "name": "Necklace",
+    "category": "Jewelry",
+    "price": 120.00,
+    "stock": 40,
+    "rating": 4.9,
+    "created_at": "2025-08-18T14:00:00Z"
+  },
+  {
+    "id": 43,
+    "name": "Earrings",
+    "category": "Jewelry",
+    "price": 80.00,
+    "stock": 60,
+    "rating": 4.7,
+    "created_at": "2025-08-22T16:00:00Z"
+  },
+  {
+    "id": 44,
+    "name": "Bracelet",
+    "category": "Jewelry",
+    "price": 90.00,
+    "stock": 55,
+    "rating": 4.6,
+    "created_at": "2025-08-25T10:00:00Z"
+  },
+  {
+    "id": 45,
+    "name": "Hooded Jacket",
+    "category": "Apparel",
+    "price": 70.00,
+    "stock": 200,
+    "rating": 4.5,
+    "created_at": "2025-09-01T12:00:00Z"
+  },
+  {
+    "id": 46,
+    "name": "Trench Coat",
+    "category": "Apparel",
+    "price": 150.00,
+    "stock": 50,
+    "rating": 4.9,
+    "created_at": "2025-08-20T14:00:00Z"
+  },
+  {
+    "id": 47,
+    "name": "Scarf",
+    "category": "Apparel",
+    "price": 20.00,
+    "stock": 300,
+    "rating": 4.3,
+    "created_at": "2025-08-25T11:00:00Z"
+  },
+  {
+    "id": 48,
+    "name": "Gloves",
+    "category": "Apparel",
+    "price": 15.00,
+    "stock": 400,
+    "rating": 4.6,
+    "created_at": "2025-09-01T15:00:00Z"
+  },
+  {
+    "id": 49,
+    "name": "Hat",
+    "category": "Apparel",
+    "price": 25.00,
+    "stock": 250,
+    "rating": 4.4,
+    "created_at": "2025-09-03T10:00:00Z"
+  },
+  {
+    "id": 50,
+    "name": "Jacket",
+    "category": "Apparel",
+    "price": 85.00,
+    "stock": 180,
+    "rating": 4.7,
+    "created_at": "2025-08-28T16:00:00Z"
+  },
+  {
+    "id": 51,
+    "name": "Dress",
+    "category": "Apparel",
+    "price": 60.00,
+    "stock": 150,
+    "rating": 4.5,
+    "created_at": "2025-09-05T12:00:00Z"
+  },
+  {
+    "id": 52,
+    "name": "Skirt",
+    "category": "Apparel",
+    "price": 40.00,
+    "stock": 200,
+    "rating": 4.3,
+    "created_at": "2025-09-02T10:00:00Z"
+  },
+  {
+    "id": 53,
+    "name": "Blouse",
+    "category": "Apparel",
+    "price": 35.00,
+    "stock": 250,
+    "rating": 4.6,
+    "created_at": "2025-08-25T14:00:00Z"
+  },
+  {
+    "id": 54,
+    "name": "Pants",
+    "category": "Apparel",
+    "price": 50.00,
+    "stock": 300,
+    "rating": 4.7,
+    "created_at": "2025-09-01T09:00:00Z"
+  },
+  {
+    "id": 55,
+    "name": "Shorts",
+    "category": "Apparel",
+    "price": 30.00,
+    "stock": 400,
+    "rating": 4.5,
+    "created_at": "2025-08-28T11:00:00Z"
+  },
+  {
+    "id": 56,
+    "name": "Shoes",
+    "category": "Footwear",
+    "price": 70.00,
+    "stock": 150,
+    "rating": 4.6,
+    "created_at": "2025-09-03T13:00:00Z"
+  },
+  {
+    "id": 57,
+    "name": "Sandals",
+    "category": "Footwear",
+    "price": 40.00,
+    "stock": 200,
+    "rating": 4.4,
+    "created_at": "2025-08-20T10:00:00Z"
+  },
+  {
+    "id": 58,
+    "name": "Boots",
+    "category": "Footwear",
+    "price": 120.00,
+    "stock": 80,
+    "rating": 4.8,
+    "created_at": "2025-09-01T16:00:00Z"
+  },
+  {
+    "id": 59,
+    "name": "Sneakers",
+    "category": "Footwear",
+    "price": 80.00,
+    "stock": 250,
+    "rating": 4.7,
+    "created_at": "2025-09-04T11:00:00Z"
+  },
+  {
+    "id": 60,
+    "name": "Heels",
+    "category": "Footwear",
+    "price": 90.00,
+    "stock": 100,
+    "rating": 4.5,
+    "created_at": "2025-08-25T15:00:00Z"
+  },
+  {
+    "id": 61,
+    "name": "Espresso Machine",
+    "category": "Home Appliances",
+    "price": 250.00,
+    "stock": 40,
+    "rating": 4.8,
+    "created_at": "2025-09-06T10:00:00Z"
+  },
+  {
+    "id": 62,
+    "name": "Microwave",
+    "category": "Home Appliances",
+    "price": 100.00,
+    "stock": 80,
+    "rating": 4.2,
+    "created_at": "2025-08-28T12:00:00Z"
+  },
+  {
+    "id": 63,
+    "name": "Vacuum Cleaner",
+    "category": "Home Appliances",
+    "price": 180.00,
+    "stock": 60,
+    "rating": 4.7,
+    "created_at": "2025-09-01T14:00:00Z"
+  },
+  {
+    "id": 64,
+    "name": "Washing Machine",
+    "category": "Home Appliances",
+    "price": 450.00,
+    "stock": 30,
+    "rating": 4.5,
+    "created_at": "2025-08-20T11:00:00Z"
+  },
+  {
+    "id": 65,
+    "name": "Refrigerator",
+    "category": "Home Appliances",
+    "price": 700.00,
+    "stock": 25,
+    "rating": 4.9,
+    "created_at": "2025-08-15T10:00:00Z"
+  },
+  {
+    "id": 66,
+    "name": "Stove",
+    "category": "Home Appliances",
+    "price": 600.00,
+    "stock": 20,
+    "rating": 4.6,
+    "created_at": "2025-08-10T09:00:00Z"
+  },
+  {
+    "id": 67,
+    "name": "Dishwasher",
+    "category": "Home Appliances",
+    "price": 400.00,
+    "stock": 35,
+    "rating": 4.3,
+    "created_at": "2025-08-05T12:00:00Z"
+  },
+  {
+    "id": 68,
+    "name": "Fan",
+    "category": "Home Appliances",
+    "price": 40.00,
+    "stock": 200,
+    "rating": 4.1,
+    "created_at": "2025-09-01T10:00:00Z"
+  },
+  {
+    "id": 69,
+    "name": "Heater",
+    "category": "Home Appliances",
+    "price": 55.00,
+    "stock": 150,
+    "rating": 4.5,
+    "created_at": "2025-08-25T14:00:00Z"
+  },
+  {
+    "id": 70,
+    "name": "Air Conditioner",
+    "category": "Home Appliances",
+    "price": 350.00,
+    "stock": 50,
+    "rating": 4.8,
+    "created_at": "2025-09-03T16:00:00Z"
+  },
+  {
+    "id": 71,
+    "name": "Picture Frame",
+    "category": "Home Decor",
+    "price": 15.00,
+    "stock": 300,
+    "rating": 4.4,
+    "created_at": "2025-08-20T10:00:00Z"
+  },
+  {
+    "id": 72,
+    "name": "Vase",
+    "category": "Home Decor",
+    "price": 25.00,
+    "stock": 150,
+    "rating": 4.6,
+    "created_at": "2025-08-22T11:00:00Z"
+  },
+  {
+    "id": 73,
+    "name": "Candle",
+    "category": "Home Decor",
+    "price": 10.00,
+    "stock": 400,
+    "rating": 4.7,
+    "created_at": "2025-09-01T13:00:00Z"
+  },
+  {
+    "id": 74,
+    "name": "Wall Art",
+    "category": "Home Decor",
+    "price": 50.00,
+    "stock": 100,
+    "rating": 4.5,
+    "created_at": "2025-08-28T15:00:00Z"
+  },
+  {
+    "id": 75,
+    "name": "Blanket",
+    "category": "Home Decor",
+    "price": 30.00,
+    "stock": 250,
+    "rating": 4.8,
+    "created_at": "2025-09-05T10:00:00Z"
+  },
+  {
+    "id": 76,
+    "name": "Mirror",
+    "category": "Home Decor",
+    "price": 80.00,
+    "stock": 70,
+    "rating": 4.2,
+    "created_at": "2025-08-18T10:00:00Z"
+  },
+  {
+    "id": 77,
+    "name": "Rug",
+    "category": "Home Decor",
+    "price": 120.00,
+    "stock": 60,
+    "rating": 4.9,
+    "created_at": "2025-08-15T14:00:00Z"
+  },
+  {
+    "id": 78,
+    "name": "Curtains",
+    "category": "Home Decor",
+    "price": 45.00,
+    "stock": 120,
+    "rating": 4.5,
+    "created_at": "2025-09-02T12:00:00Z"
+  },
+  {
+    "id": 79,
+    "name": "Tablecloth",
+    "category": "Home Decor",
+    "price": 20.00,
+    "stock": 200,
+    "rating": 4.3,
+    "created_at": "2025-08-25T10:00:00Z"
+  },
+  {
+    "id": 80,
+    "name": "Cushion",
+    "category": "Home Decor",
+    "price": 18.00,
+    "stock": 350,
+    "rating": 4.6,
+    "created_at": "2025-09-01T11:00:00Z"
+  },
+  {
+    "id": 81,
+    "name": "Fitness Tracker",
+    "category": "Electronics",
+    "price": 90.00,
+    "stock": 150,
+    "rating": 4.7,
+    "created_at": "2025-09-04T12:00:00Z"
+  },
+  {
+    "id": 82,
+    "name": "Smartwatch",
+    "category": "Electronics",
+    "price": 200.00,
+    "stock": 100,
+    "rating": 4.8,
+    "created_at": "2025-09-06T14:00:00Z"
+  },
+  {
+    "id": 83,
+    "name": "Drone",
+    "category": "Electronics",
+    "price": 350.00,
+    "stock": 50,
+    "rating": 4.5,
+    "created_at": "2025-08-20T15:00:00Z"
+  },
+  {
+    "id": 84,
+    "name": "Digital Camera",
+    "category": "Electronics",
+    "price": 500.00,
+    "stock": 40,
+    "rating": 4.9,
+    "created_at": "2025-09-01T16:00:00Z"
+  },
+  {
+    "id": 85,
+    "name": "Gaming Console",
+    "category": "Electronics",
+    "price": 400.00,
+    "stock": 30,
+    "rating": 4.7,
+    "created_at": "2025-08-25T17:00:00Z"
+  },
+  {
+    "id": 86,
+    "name": "VR Headset",
+    "category": "Electronics",
+    "price": 300.00,
+    "stock": 25,
+    "rating": 4.6,
+    "created_at": "2025-08-28T10:00:00Z"
+  },
+  {
+    "id": 87,
+    "name": "E-reader",
+    "category": "Electronics",
+    "price": 120.00,
+    "stock": 80,
+    "rating": 4.8,
+    "created_at": "2025-09-01T11:00:00Z"
+  },
+  {
+    "id": 88,
+    "name": "Power Bank",
+    "category": "Electronics",
+    "price": 25.00,
+    "stock": 300,
+    "rating": 4.5,
+    "created_at": "2025-09-03T12:00:00Z"
+  },
+  {
+    "id": 89,
+    "name": "Projector",
+    "category": "Electronics",
+    "price": 150.00,
+    "stock": 50,
+    "rating": 4.3,
+    "created_at": "2025-08-22T13:00:00Z"
+  },
+  {
+    "id": 90,
+    "name": "Router",
+    "category": "Electronics",
+    "price": 70.00,
+    "stock": 100,
+    "rating": 4.6,
+    "created_at": "2025-09-05T14:00:00Z"
+  },
+  {
+    "id": 91,
+    "name": "Hard Drive",
+    "category": "Electronics",
+    "price": 80.00,
+    "stock": 120,
+    "rating": 4.7,
+    "created_at": "2025-09-06T15:00:00Z"
+  },
+  {
+    "id": 92,
+    "name": "SSD",
+    "category": "Electronics",
+    "price": 100.00,
+    "stock": 90,
+    "rating": 4.8,
+    "created_at": "2025-09-07T16:00:00Z"
+  },
+  {
+    "id": 93,
+    "name": "USB Drive",
+    "category": "Electronics",
+    "price": 10.00,
+    "stock": 500,
+    "rating": 4.5,
+    "created_at": "2025-09-01T10:00:00Z"
+  },
+  {
+    "id": 94,
+    "name": "SD Card",
+    "category": "Electronics",
+    "price": 15.00,
+    "stock": 400,
+    "rating": 4.6,
+    "created_at": "2025-08-25T11:00:00Z"
+  },
+  {
+    "id": 95,
+    "name": "Microphone",
+    "category": "Electronics",
+    "price": 40.00,
+    "stock": 150,
+    "rating": 4.7,
+    "created_at": "2025-09-02T12:00:00Z"
+  },
+  {
+    "id": 96,
+    "name": "Webcam",
+    "category": "Electronics",
+    "price": 35.00,
+    "stock": 200,
+    "rating": 4.3,
+    "created_at": "2025-09-07T09:00:00Z"
+  },
+  {
+    "id": 97,
+    "name": "Tripod",
+    "category": "Electronics",
+    "price": 25.00,
+    "stock": 250,
+    "rating": 4.4,
+    "created_at": "2025-09-03T10:00:00Z"
+  },
+  {
+    "id": 98,
+    "name": "Camera Lens",
+    "category": "Electronics",
+    "price": 200.00,
+    "stock": 30,
+    "rating": 4.9,
+    "created_at": "2025-08-20T11:00:00Z"
+  },
+  {
+    "id": 99,
+    "name": "Gaming Keyboard",
+    "category": "Electronics",
+    "price": 90.00,
+    "stock": 80,
+    "rating": 4.8,
+    "created_at": "2025-09-05T12:00:00Z"
+  },
+  {
+    "id": 100,
+    "name": "Gaming Mouse",
+    "category": "Electronics",
+    "price": 60.00,
+    "stock": 100,
+    "rating": 4.7,
+    "created_at": "2025-09-06T13:00:00Z"
+  }
+]

@@ -1,0 +1,101 @@
+id,name,category,price,stock,rating,created_at
+1,Laptop,Electronics,1200.00,50,4.5,2025-09-01T10:00:00Z
+2,Coffee Maker,Home Appliances,75.50,150,4.2,2025-08-25T14:30:00Z
+3,T-Shirt,Apparel,25.00,500,4.8,2025-09-05T08:15:00Z
+4,Smartphone,Electronics,850.75,120,4.7,2025-09-02T16:45:00Z
+5,Book,Books,15.99,300,4.9,2025-07-20T11:00:00Z
+6,Desk Lamp,Home Office,45.00,200,4.1,2025-08-15T09:00:00Z
+7,Running Shoes,Apparel,90.50,180,4.6,2025-09-03T12:00:00Z
+8,Bluetooth Speaker,Electronics,60.00,250,4.3,2025-09-04T17:00:00Z
+9,Water Bottle,Kitchenware,10.00,750,4.9,2025-08-10T10:00:00Z
+10,Keyboard,Electronics,75.00,100,4.4,2025-09-01T15:00:00Z
+11,Jeans,Apparel,55.00,350,4.5,2025-09-06T11:00:00Z
+12,Blender,Home Appliances,50.25,90,4.1,2025-08-28T13:00:00Z
+13,Webcam,Electronics,35.00,200,4.3,2025-09-07T09:00:00Z
+14,Hoodie,Apparel,40.00,400,4.7,2025-08-30T10:00:00Z
+15,Mouse,Electronics,20.00,600,4.6,2025-09-01T14:00:00Z
+16,Sofa,Furniture,550.00,20,4.0,2025-07-15T12:00:00Z
+17,TV,Electronics,900.00,40,4.8,2025-09-03T15:00:00Z
+18,Gaming Chair,Furniture,250.00,30,4.6,2025-08-20T11:00:00Z
+19,Headphones,Electronics,150.00,180,4.9,2025-09-04T10:00:00Z
+20,Backpack,Bags,65.00,120,4.7,2025-08-25T16:00:00Z
+21,Mug,Kitchenware,8.00,500,4.5,2025-08-22T08:00:00Z
+22,Pillow,Home Decor,22.50,300,4.3,2025-08-18T10:00:00Z
+23,Dumbbells,Sports,45.00,100,4.5,2025-09-01T12:00:00Z
+24,Yoga Mat,Sports,20.00,200,4.8,2025-08-29T10:00:00Z
+25,Coffee Table,Furniture,120.00,50,4.1,2025-08-10T15:00:00Z
+26,Cutting Board,Kitchenware,18.00,250,4.4,2025-09-05T13:00:00Z
+27,Hand Mixer,Home Appliances,30.00,150,4.2,2025-08-27T11:00:00Z
+28,Socks,Apparel,7.00,800,4.9,2025-09-02T09:00:00Z
+29,Tablet,Electronics,300.00,80,4.6,2025-09-04T14:00:00Z
+30,Printer,Electronics,150.00,60,4.0,2025-08-25T11:00:00Z
+31,Sweater,Apparel,50.00,250,4.5,2025-08-20T15:00:00Z
+32,Toaster,Home Appliances,25.00,200,4.3,2025-08-15T10:00:00Z
+33,Backpack,Bags,65.00,120,4.7,2025-08-25T16:00:00Z
+34,Charger,Electronics,15.00,400,4.5,2025-09-01T11:00:00Z
+35,Pen,Stationery,5.00,1000,4.8,2025-07-01T10:00:00Z
+36,Notebook,Stationery,12.00,700,4.6,2025-08-05T12:00:00Z
+37,Chair,Furniture,80.00,100,4.2,2025-08-28T09:00:00Z
+38,Air Fryer,Home Appliances,95.00,75,4.7,2025-09-03T11:00:00Z
+39,Watch,Accessories,150.00,100,4.5,2025-09-05T14:00:00Z
+40,Sunglasses,Accessories,25.00,200,4.3,2025-08-20T10:00:00Z
+41,Ring,Jewelry,100.00,50,4.8,2025-08-15T12:00:00Z
+42,Necklace,Jewelry,120.00,40,4.9,2025-08-18T14:00:00Z
+43,Earrings,Jewelry,80.00,60,4.7,2025-08-22T16:00:00Z
+44,Bracelet,Jewelry,90.00,55,4.6,2025-08-25T10:00:00Z
+45,Hooded Jacket,Apparel,70.00,200,4.5,2025-09-01T12:00:00Z
+46,Trench Coat,Apparel,150.00,50,4.9,2025-08-20T14:00:00Z
+47,Scarf,Apparel,20.00,300,4.3,2025-08-25T11:00:00Z
+48,Gloves,Apparel,15.00,400,4.6,2025-09-01T15:00:00Z
+49,Hat,Apparel,25.00,250,4.4,2025-09-03T10:00:00Z
+50,Jacket,Apparel,85.00,180,4.7,2025-08-28T16:00:00Z
+51,Dress,Apparel,60.00,150,4.5,2025-09-05T12:00:00Z
+52,Skirt,Apparel,40.00,200,4.3,2025-09-02T10:00:00Z
+53,Blouse,Apparel,35.00,250,4.6,2025-08-25T14:00:00Z
+54,Pants,Apparel,50.00,300,4.7,2025-09-01T09:00:00Z
+55,Shorts,Apparel,30.00,400,4.5,2025-08-28T11:00:00Z
+56,Shoes,Footwear,70.00,150,4.6,2025-09-03T13:00:00Z
+57,Sandals,Footwear,40.00,200,4.4,2025-08-20T10:00:00Z
+58,Boots,Footwear,120.00,80,4.8,2025-09-01T16:00:00Z
+59,Sneakers,Footwear,80.00,250,4.7,2025-09-04T11:00:00Z
+60,Heels,Footwear,90.00,100,4.5,2025-08-25T15:00:00Z
+61,Espresso Machine,Home Appliances,250.00,40,4.8,2025-09-06T10:00:00Z
+62,Microwave,Home Appliances,100.00,80,4.2,2025-08-28T12:00:00Z
+63,Vacuum Cleaner,Home Appliances,180.00,60,4.7,2025-09-01T14:00:00Z
+64,Washing Machine,Home Appliances,450.00,30,4.5,2025-08-20T11:00:00Z
+65,Refrigerator,Home Appliances,700.00,25,4.9,2025-08-15T10:00:00Z
+66,Stove,Home Appliances,600.00,20,4.6,2025-08-10T09:00:00Z
+67,Dishwasher,Home Appliances,400.00,35,4.3,2025-08-05T12:00:00Z
+68,Fan,Home Appliances,40.00,200,4.1,2025-09-01T10:00:00Z
+69,Heater,Home Appliances,55.00,150,4.5,2025-08-25T14:00:00Z
+70,Air Conditioner,Home Appliances,350.00,50,4.8,2025-09-03T16:00:00Z
+71,Picture Frame,Home Decor,15.00,300,4.4,2025-08-20T10:00:00Z
+72,Vase,Home Decor,25.00,150,4.6,2025-08-22T11:00:00Z
+73,Candle,Home Decor,10.00,400,4.7,2025-09-01T13:00:00Z
+74,Wall Art,Home Decor,50.00,100,4.5,2025-08-28T15:00:00Z
+75,Blanket,Home Decor,30.00,250,4.8,2025-09-05T10:00:00Z
+76,Mirror,Home Decor,80.00,70,4.2,2025-08-18T10:00:00Z
+77,Rug,Home Decor,120.00,60,4.9,2025-08-15T14:00:00Z
+78,Curtains,Home Decor,45.00,120,4.5,2025-09-02T12:00:00Z
+79,Tablecloth,Home Decor,20.00,200,4.3,2025-08-25T10:00:00Z
+80,Cushion,Home Decor,18.00,350,4.6,2025-09-01T11:00:00Z
+81,Fitness Tracker,Electronics,90.00,150,4.7,2025-09-04T12:00:00Z
+82,Smartwatch,Electronics,200.00,100,4.8,2025-09-06T14:00:00Z
+83,Drone,Electronics,350.00,50,4.5,2025-08-20T15:00:00Z
+84,Digital Camera,Electronics,500.00,40,4.9,2025-09-01T16:00:00Z
+85,Gaming Console,Electronics,400.00,30,4.7,2025-08-25T17:00:00Z
+86,VR Headset,Electronics,300.00,25,4.6,2025-08-28T10:00:00Z
+87,E-reader,Electronics,120.00,80,4.8,2025-09-01T11:00:00Z
+88,Power Bank,Electronics,25.00,300,4.5,2025-09-03T12:00:00Z
+89,Projector,Electronics,150.00,50,4.3,2025-08-22T13:00:00Z
+90,Router,Electronics,70.00,100,4.6,2025-09-05T14:00:00Z
+91,Hard Drive,Electronics,80.00,120,4.7,2025-09-06T15:00:00Z
+92,SSD,Electronics,100.00,90,4.8,2025-09-07T16:00:00Z
+93,USB Drive,Electronics,10.00,500,4.5,2025-09-01T10:00:00Z
+94,SD Card,Electronics,15.00,400,4.6,2025-08-25T11:00:00Z
+95,Microphone,Electronics,40.00,150,4.7,2025-09-02T12:00:00Z
+96,Webcam,Electronics,35.00,200,4.3,2025-09-07T09:00:00Z
+97,Tripod,Electronics,25.00,250,4.4,2025-09-03T10:00:00Z
+98,Camera Lens,Electronics,200.00,30,4.9,2025-08-20T11:00:00Z
+99,Gaming Keyboard,Electronics,90.00,80,4.8,2025-09-05T12:00:00Z
+100,Gaming Mouse,Electronics,60.00,100,4.7,2025-09-06T13:00:00Z
