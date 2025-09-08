@@ -1,3 +1,18 @@
+<?php
+
+use App\Model\Category;
+
+$categories = Category::findByParams();
+$sortParams = [
+        'date-desc' => 'По дате добавления (убывание)',
+        'date-asc' => 'По дате добавления (возрастание)',
+        'price-asc' => 'Цена (по возрастанию)',
+        'price-desc' => 'Цена (по убыванию)',
+        'rating-asc' => 'Рейтинг (по возрастанию)',
+        'rating-desc' => 'Рейтинг (по убыванию',
+];
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,19 +24,14 @@
     <link rel="stylesheet" href="/src/assets/style/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<h1>Каталог товаров</h1>
-<section id="content">
-    <body class="p-4 sm:p-6 lg:p-8">
+<header class="text-center mb-8 sm:mb-12">
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800">
+        Каталог товаров
+    </h1>
 
-    <header class="text-center mb-8 sm:mb-12">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800">
-            Каталог товаров
-        </h1>
-        <p class="mt-2 text-lg sm:text-xl text-gray-600">
-            Ознакомьтесь с нашей последней коллекцией
-        </p>
-    </header>
+</header>
+<body>
+<section id="content">
 
     <div id="comparison-bar" class="fixed top-4 right-4 z-50 bg-white p-4 rounded-xl shadow-xl flex items-center space-x-2 lg:space-x-4">
         <div id="compare-items-container" class="flex items-center space-x-2 overflow-x-auto whitespace-nowrap">
@@ -42,56 +52,74 @@
         </button>
 
         <aside id="sidebar" class="sidebar fixed inset-y-0 left-0 w-64 bg-white p-6 shadow-xl z-40 lg:relative lg:w-auto lg:shadow-none ">
-            <div class="flex justify-between items-center mb-6 lg:hidden">
-                <h3 class="text-2xl font-semibold text-gray-800">Фильтры</h3>
-                <button id="closeSidebar" class="text-gray-500 hover:text-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-
-            <div class="mb-6">
-                <label for="search" class="block text-sm font-medium text-gray-700 mb-2">Поиск по названию</label>
-                <input type="text" id="search" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring focus:ring-violet-500 focus:ring-opacity-50 px-3 py-2" placeholder="Например, футболка">
-            </div>
-
-            <div class="mb-6">
-                <label for="sort" class="block text-sm font-medium text-gray-700 mb-2">Сортировать по</label>
-                <select id="sort" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring focus:ring-violet-500 focus:ring-opacity-50 px-3 py-2">
-                    <option value="date-desc">По дате добавления (убывание)</option>
-                    <option value="date-asc">По дате добавления (возрастание)</option>
-                    <option value="price-asc">Цена (по возрастанию)</option>
-                    <option value="price-desc">Цена (по убыванию)</option>
-                    <option value="rating-asc">Рейтинг (по возрастанию)</option>
-                    <option value="rating-desc">Рейтинг (по убыванию)</option>
-                </select>
-            </div>
-
-            <div class="mb-6">
-                <label for="category" class="block text-sm font-medium text-gray-700 mb-2">Категория</label>
-                <select id="category" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring focus:ring-violet-500 focus:ring-opacity-50 px-3 py-2">
-                    <option value="all">Все категории</option>
-                    <option value="Одежда">Одежда</option>
-                    <option value="Аксессуары">Аксессуары</option>
-                    <option value="Электроника">Электроника</option>
-                </select>
-            </div>
-
-            <div class="mb-6">
-                <label class="block text-sm font-medium text-gray-700 mb-2">Диапазон цен</label>
-                <div class="flex items-center gap-2">
-                    <input type="number" id="minPrice" class="w-1/2 rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 focus:ring-opacity-50 px-3 py-2" placeholder="Мин">
-                    <span class="text-gray-500">-</span>
-                    <input type="number" id="maxPrice" class="w-1/2 rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 focus:ring-opacity-50 px-3 py-2" placeholder="Макс">
+            <form action="/api/load-products" method="post" id="filterForm">
+                <div class="flex justify-between items-center mb-6 lg:hidden">
+                    <h3 class="text-2xl font-semibold text-gray-800">Фильтры</h3>
+                    <button id="closeSidebar" class="text-gray-500 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
-            </div>
 
-            <div class="mb-6 flex items-center">
-                <input type="checkbox" id="inStock" class="rounded text-violet-600 focus:ring-violet-500">
-                <label for="inStock" class="ml-2 text-sm font-medium text-gray-700">В наличии</label>
-            </div>
+                <div class="mb-6">
+                    <label for="search" class="block text-sm font-medium text-gray-700 mb-2">Поиск по названию</label>
+                    <input type="text" id="search" name="query" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring
+                           focus:ring-violet-500 focus:ring-opacity-50 px-3 py-2" placeholder="Например, футболка" value="<?=isset($_GET['query']) ? $_GET['query'] : ""?>">
+                </div>
 
+                <div class="mb-6">
+                    <label for="sort" class="block text-sm font-medium text-gray-700 mb-2">Сортировать по</label>
+                    <select id="sort" name="sort" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring focus:ring-violet-500
+                    focus:ring-opacity-50 px-3 py-2">
+                        <?php foreach ($sortParams as $key => $sortParam):?>
+                            <option value="<?=$key?>" <?=$_GET['sort'] === $key ? 'selected="selected"' : ''?>><?=$sortParam?></option>
+                        <?php endforeach;?>
+
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label for="category" class="block text-sm font-medium text-gray-700 mb-2">Категория</label>
+                    <select id="category" name="category_id" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-violet-500 focus:ring
+                    focus:ring-violet-500
+                    focus:ring-opacity-50 px-3 py-2">
+                        <option value="all">Все категории</option>
+                        <?php foreach ($categories as $category):?>
+                            <option value="<?=$category->getId()?>" <?= intval($_GET['category_id']) === $category->getId() ?
+                                'selected="selected"' : ''?>><?=$category->getName()
+                                ?></option>
+                        <?php endforeach;?>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Диапазон цен</label>
+                    <div class="flex items-center gap-2">
+                        <input type="number" name="minPrice" id="minPrice" class="w-1/2 rounded-lg border-gray-300 shadow-sm focus:border-violet-500
+                        focus:ring-violet-500 focus:ring-opacity-50 px-3 py-2" placeholder="Мин" value="<?=intval($_GET['minPrice']) > 0 ? $_GET['minPrice'] : ''?>">
+                        <span class="text-gray-500">-</span>
+                        <input type="number" name="maxPrice" id="maxPrice" class="w-1/2 rounded-lg border-gray-300 shadow-sm focus:border-violet-500
+                        focus:ring-violet-500 focus:ring-opacity-50 px-3 py-2" placeholder="Макс" value="<?= intval($_GET['maxPrice']) > 0 ? $_GET['maxPrice'] : ''?>">
+                    </div>
+                </div>
+
+                <div class="mb-6 flex items-center">
+                    <input type="checkbox" name="inStock" value="1"  id="inStock" <?= intval($_GET['inStock']) === 1 ? 'checked="checked"' : ''?>
+                           class="rounded text-violet-600 focus:ring-violet-500">
+                    <label for="inStock" class="ml-2 text-sm font-medium text-gray-700">В наличии</label>
+                </div>
+                    <button id="applyFilter" type="button" class="w-full bg-violet-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-violet-700
+                    transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-opacity-50">
+                        Применить
+                    </button>
+
+                    <button id="resetFilter" type="button" class="w-full mt-10 bg-gray-300 text-gray-700 font-medium py-3 px-6 rounded-lg shadow-md
+                    hover:bg-gray-400
+                    transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50">
+                        Сбросить
+                    </button>
+            </form>
         </aside>
 
         <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">

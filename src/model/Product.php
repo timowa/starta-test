@@ -95,8 +95,7 @@ class Product extends Model
         $offset = intval($params['offset']);
         $allowedParams = [
             'query' => 'string',
-            'sort_by' => 'string',
-            'sort_order' => 'string',
+            'sort' => 'string',
             'category' => 'integer',
             'price_min' => 'integer',
             'price_max' => 'integer',
@@ -123,19 +122,22 @@ class Product extends Model
         }
         $db = DB::getInstance();
         if (!empty($params['query'])) {
-            $where[] = "LEFT(`name`, STRLEN('{$params['query']}')) LIKE '%{$params['query']}%'";
+            $where[] = "`name` LIKE '%{$params['query']}%'";
         }
-        if (!empty($params['sort_by']) && !empty($params['sort_order'])) {
-            if (in_array($params['sort_order'], ['ASC', 'DESC'])) {
-                switch ($params['sort_by']) {
+        if (!empty($params['sort'])) {
+            $sortParam = explode('-', $params['sort']);
+            $sortBy = $sortParam[0];
+            $sortOrder = strtoupper($sortParam[1]);
+            if (in_array($sortOrder, ['ASC', 'DESC'])) {
+                switch ($sortBy) {
                     case 'price':
-                        $order[] = "`price` {$params['sort_order']}";
+                        $order[] = "`price` {$sortOrder}";
                         break;
                     case 'rating':
-                        $order[] = "`rating` {$params['sort_order']}";
+                        $order[] = "`rating` {$sortOrder}";
                         break;
                     case 'created':
-                        $order[] = "`created_at` {$params['sort_order']}";
+                        $order[] = "`created_at` {$sortOrder}";
                         break;
                 }
             }
@@ -159,7 +161,8 @@ class Product extends Model
         $order = empty($order) ? '' : 'ORDER BY ' . implode(', ', $order);
         $limit = $limit > 0 ? ' LIMIT ' . $limit : '';
         $offset = $offset > 0 ? ' OFFSET ' . $offset : '';
-        $query = $db->query("SELECT * FROM `products` $where $order $limit $offset");
+        $sql = "SELECT * FROM `products` $where $order $limit $offset";
+        $query = $db->query($sql);
         $result = $query->fetchAllArray();
         if (!empty($result)) {
             $result = array_map(function ($item) {

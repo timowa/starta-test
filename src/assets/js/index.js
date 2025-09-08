@@ -1,15 +1,10 @@
 
 const productGrid = document.getElementById('productGrid');
-const searchInput = document.getElementById('search');
-const sortSelect = document.getElementById('sort');
-const categorySelect = document.getElementById('category');
-const minPriceInput = document.getElementById('minPrice');
-const maxPriceInput = document.getElementById('maxPrice');
-const inStockCheckbox = document.getElementById('inStock');
 const showMoreBtn = document.getElementById('showMoreBtn');
-const productItemTemplate = document.getElementById('productItem')
+const productItemTemplate = document.getElementById('productItem');
+const filterForm = document.getElementById('filterForm');
 
-const badgeNew = '<div class="flex items-center space-x-1 px-2 py-1 bg-blue-500 text-white text-xs font-semibold rounded-full shadow-md">\n' +
+const badgeNew = '<div class="flex items-center space-x-1 px-2 py-1 bg-purple-500 text-white text-xs font-semibold rounded-full shadow-md">\n' +
     '                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>\n' +
     '                                <span>Новинка</span>\n' +
     '                            </div>';
@@ -26,8 +21,7 @@ const badgeLast = '<div class="flex items-center space-x-1 px-2 py-1 bg-red-500 
     '                                <span>Последний на складе</span>\n' +
     '                            </div>';
 
-let upload = false,
-    topLoad = 0;
+let upload = false;
 function showLoadingState() {
     productGrid.innerHTML = '';
     const numberOfSkeletons = 12;
@@ -44,8 +38,15 @@ function showLoadingState() {
     }
 }
 
-function loadProducts() {
-    if (upload === false) {
+function hideLoadingState() {
+    document.querySelectorAll('.skeleton-card').forEach(el => {el.remove()})
+}
+function clearProductGrid() {
+    document.querySelectorAll('.product-card').forEach(el => {el.remove()});
+}
+
+function loadProducts(firstLoad = false) {
+    if (upload === false && firstLoad === false) {
         return;
     }
     const searchParams =  Object.fromEntries((new URLSearchParams(window.location.search)).entries());
@@ -57,14 +58,26 @@ function loadProducts() {
         data: searchParams,
         beforeSend: function() {
             upload = false;
-            if (productCards.length > 0) {
-                topLoad = productCards[productCards.length - 1].offset().top;
+            if (document.querySelectorAll('.skeleton-card').length > 0) {
+                showLoadingState();
             }
         },
         success: function(products) {
-            $.each(products, function (i, product) {
-                productGrid.prepend(composeProductItem(product))
-            })
+            if (products.length > 0) {
+                const emptyRow = document.getElementById('empty');
+                console.log(emptyRow)
+                if (emptyRow) {
+                    emptyRow.remove()
+                }
+                $.each(products, function (i, product) {
+                    productGrid.append(composeProductItem(product))
+                })
+                hideLoadingState();
+                upload = !(products < 12) && firstLoad === false;
+            } else {
+                productGrid.innerHTML = '<p class="col-span-full text-center text-gray-500" id="empty">Нет товаров, соответствующих вашим критериям.</p>';
+            }
+
         }
     })
 }
@@ -105,11 +118,46 @@ function composeProductItem(product) {
     return newItem;
 }
 
+
+
 $(document).ready(function() {
     showLoadingState();
-
+    loadProducts(true);
     showMoreBtn.addEventListener('click', function() {
         upload = true;
         loadProducts()
+        this.classList.add('hidden')
+    })
+    window.addEventListener('scroll', function() {
+        let productCards = document.querySelectorAll('.product-card');
+        if (productCards.length > 0 && productCards[productCards.length - 1].offsetTop > window.scrollY - 200) {
+            loadProducts()
+        }
+    })
+
+    document.getElementById('applyFilter').addEventListener('click', function(e) {
+        e.preventDefault()
+        const formData = new FormData(filterForm);
+        const url = window.location;
+        let searchParams = new URLSearchParams();
+        for (const pair of formData.entries()) {
+            if (pair[1] !== "" && pair[1] !== 'date-desc' && pair[1] !== 'all') {
+                searchParams.set(pair[0], pair[1]);
+            }
+        }
+        if (searchParams.size > 0) {
+            let newUrl = url.origin + url.pathname + '?' + searchParams.toString();
+            window.history.pushState(null, null, newUrl);
+        }
+        clearProductGrid();
+        loadProducts(true);
+    })
+    document.getElementById('resetFilter').addEventListener('click', function (e) {
+        e.preventDefault();
+        const url = window.location;
+        const newUrl =  url.origin + url.pathname;
+        window.history.pushState(null, null, newUrl);
+        clearProductGrid();
+        loadProducts(true);
     })
 })
