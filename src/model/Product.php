@@ -59,6 +59,29 @@ class Product extends Model
         return $this->createdAt;
     }
 
+    public function getIsNew() {
+        $dt = new DateTime();
+        return $dt->diff($this->createdAt)->days <= 30;
+    }
+
+    public function getIsTop() {
+        return $this->rating >= 4.7;
+    }
+    public function getIsProfit() {
+        $category = $this->getCategory();
+        return $this->price <= $category->getMedianPrice() * 0.15;
+    }
+    public function getIsLast() {
+        return $this->stock <= 3;
+    }
+
+    public function getCategory(): Category{
+        if (!isset($this->category)) {
+            $this->category = Category::findById($this->categoryId);
+        }
+        return $this->category;
+    }
+
     public static function findById(int $id)
     {
         // TODO: Implement findById() method.
@@ -66,8 +89,77 @@ class Product extends Model
 
     public static function findByParams(array $params = [])
     {
+        $where = [];
+        $order = [];
+        $limit = intval($params['limit']);
+        $offset = intval($params['offset']);
+        $allowedParams = [
+            'query' => 'string',
+            'sort_by' => 'string',
+            'sort_order' => 'string',
+            'category' => 'integer',
+            'price_min' => 'integer',
+            'price_max' => 'integer',
+            'in_stock' => 'boolean'
+        ];
+        foreach ($params as $key => &$value) {
+            if (!in_array($key, array_keys($allowedParams))) {
+                unset($params[$key]);
+            }
+            switch ($allowedParams[$key]) {
+                case 'string':
+                    $value = filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS);
+                    if ($value === '') {
+                        unset($params[$key]);
+                    }
+                    break;
+                case 'integer':
+                    $value = intval($value);
+                    break;
+                case 'boolean':
+                    $value = boolval($value);
+                    break;
+            }
+        }
         $db = DB::getInstance();
-        $query = $db->query("SELECT * FROM `products`");
+        if (!empty($params['query'])) {
+            $where[] = "LEFT(`name`, STRLEN('{$params['query']}')) LIKE '%{$params['query']}%'";
+        }
+        if (!empty($params['sort_by']) && !empty($params['sort_order'])) {
+            if (in_array($params['sort_order'], ['ASC', 'DESC'])) {
+                switch ($params['sort_by']) {
+                    case 'price':
+                        $order[] = "`price` {$params['sort_order']}";
+                        break;
+                    case 'rating':
+                        $order[] = "`rating` {$params['sort_order']}";
+                        break;
+                    case 'created':
+                        $order[] = "`created_at` {$params['sort_order']}";
+                        break;
+                }
+            }
+        }
+        if (intval($params['category_id']) > 0) {
+            $where[] = "`category_id` = {$params['category_id']}";
+        }
+        if (intval($params['price_min']) > 0) {
+            $where[] = "`price` > {$params['price_min']}";
+        }
+        if (intval($params['price_max']) > 0) {
+            $where[] = "`price` < {$params['price_max']}";
+        }
+        if ($params['is_stock'] === true) {
+            $where[] = "`stock` > 0";
+        }
+        if (intval($params['category_id'])) {
+            $where[] = "`category_id` = {$params['category_id']}";
+        }
+        $where = empty($where) ? '' : 'WHERE ' . implode(' AND ', $where);
+        $order = empty($order) ? '' : 'ORDER BY ' . implode(', ', $order);
+        $limit = $limit > 0 ? ' LIMIT ' . $limit : '';
+        $offset = $offset > 0 ? ' OFFSET ' . $offset : '';
+        $query = $db->query("SELECT * FROM `products` $where $order $limit $offset");
         $result = $query->fetchAllArray();
         if (!empty($result)) {
             $result = array_map(function ($item) {

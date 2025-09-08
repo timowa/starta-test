@@ -60,4 +60,20 @@ class Category extends Model
             throw new \Exception('Ошибка создания категории');
         }
     }
+
+    public function getProducts() {
+        if (!isset($this->products)) {
+            $this->products = Product::findByParams(['category_id' => $this->id]);
+        }
+        return $this->products;
+    }
+
+    public function getMedianPrice() {
+        $products = $this->getProducts();
+        $allPrices = array_map(fn ($p) => $p->getPrice(), $products);
+        if (!empty($allPrices)) {
+            return array_sum($allPrices) / count($allPrices);
+        }
+        return 0;
+    }
 }
